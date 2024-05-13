@@ -7,6 +7,8 @@ using UnityEngine;
 public class BirdBehavior : MonoBehaviour
 {
     Rigidbody2D fisica;
+    [SerializeField]
+    private float impulse = 3.0f;
 
     private void Awake()
     {
@@ -25,6 +27,6 @@ public class BirdBehavior : MonoBehaviour
 
     void impulsionar()
     {
-        this.fisica.AddForce(Vector2.up * 3, ForceMode2D.Impulse);
+        this.fisica.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
     }
 }
