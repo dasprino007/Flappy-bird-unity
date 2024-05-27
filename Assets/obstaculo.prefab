@@ -337,6 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 1.5
   variacaoposicaoy: 1
+  tempoparadeletar: 5
 --- !u!23 &-6389120014983311134
 MeshRenderer:
   m_ObjectHideFlags: 0
