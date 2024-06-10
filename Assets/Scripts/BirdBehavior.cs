@@ -30,18 +30,4 @@ public class BirdBehavior : MonoBehaviour
     {
         this.fisica.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
     }
-
-    /// <summary>
-    /// tentando fazer o game over mas não deu
-    /// </summary>
-    /// <param name="collision"></param>
-    private void OnTriggerEnter(Collider collision)
-    {
-        Debug.Log("colidiu");
-        GameOver();
-    }
-    public void GameOver()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
