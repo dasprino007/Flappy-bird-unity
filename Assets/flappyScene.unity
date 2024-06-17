@@ -368,7 +368,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.17
+  m_Radius: 0.5
 --- !u!212 &529568497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ca0ff9c96c8e7044eba107bd7f496bb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7447a73291598bc4dae0b1280fab9cd4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -429,8 +429,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529568495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.06, z: 0}
-  m_LocalScale: {x: 2.2574897, y: 2.2574897, z: 2.2574897}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7867352, y: 0.7867352, z: 0.7867352}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -450,7 +450,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impulse: 3
+  op2Sprite: {fileID: 21300000, guid: 4436577338e787744902474d8a3c7ca4, type: 3}
 --- !u!1 &543049289
 GameObject:
   m_ObjectHideFlags: 0

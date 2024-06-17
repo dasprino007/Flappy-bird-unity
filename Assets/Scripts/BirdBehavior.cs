@@ -10,10 +10,13 @@ public class BirdBehavior : MonoBehaviour
     Rigidbody2D fisica;
     [SerializeField]
     private float impulse = 3.0f;
+    private SpriteRenderer op2;
+    public Sprite op2Sprite;
 
     private void Awake()
     {
         this.fisica = GetComponent<Rigidbody2D>();
+        this.op2 = GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -23,6 +26,7 @@ public class BirdBehavior : MonoBehaviour
         {
             this.impulsionar();
             Debug.Log("clicou");
+            this.op2.sprite = op2Sprite;
         }
     }
 
