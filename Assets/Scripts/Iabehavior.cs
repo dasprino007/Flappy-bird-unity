@@ -53,18 +53,14 @@ public class Iabehavior : MonoBehaviour
         if (GameObject.Find("Pos-obs-y") != null)
         {
             estadoObstaculo = true;
-            Debug.Log("obstaculo esta no jogo");
             Obstaculopos = GameObject.Find("Pos-obs-y").transform.position;
-            if(Obstaculopos.y > posicaoIA.y && Impulartime == false)
-            {
-                Debug.Log("pulou");
-                impulsionar();
-                Impulartime = true;
-            }
+            Debug.Log(Obstaculopos.y);
+
         }
         else
         {
             Debug.Log("não existe");
+            estadoObstaculo = false;
         }
     }
     void impulsionar()
