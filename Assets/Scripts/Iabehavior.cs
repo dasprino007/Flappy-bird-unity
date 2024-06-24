@@ -17,12 +17,15 @@ public class Iabehavior : MonoBehaviour
     [SerializeField]
     private float ChegarY = 0f;
     private bool Impulartime = false;
+    private Vector3 posicaoIA;
+    private bool estadoObstaculo = false;
     // Start is called before the first frame update
 
     private void Awake()
     {
         this.Cronometro = TempoParaimpulsionar;
         this.fisica = GetComponent<Rigidbody2D>();
+        this.posicaoIA = GameObject.FindObjectOfType<Iabehavior>().transform.position;
     }
     // Update is called once per frame
     void Update()
@@ -36,13 +39,7 @@ public class Iabehavior : MonoBehaviour
 
         acharObstaculo();
 
-        if (GameObject.Find("Pos-obs-y") != null && (this.transform.position.y < Obstaculopos.y && Impulartime == false)
-        {
-            impulsionar();
-            Debug.Log("impulsionar para o obstaculo");
-            Impulartime = true;
-        }
-        else if (this.transform.position.y < ChegarY && Impulartime == false)
+        if (this.transform.position.y < ChegarY && Impulartime == false && estadoObstaculo == true)
         {
             impulsionar();
             Impulartime = true;
@@ -55,8 +52,15 @@ public class Iabehavior : MonoBehaviour
     {
         if (GameObject.Find("Pos-obs-y") != null)
         {
-            Debug.Log("obstaculo na pos 0");
+            estadoObstaculo = true;
+            Debug.Log("obstaculo esta no jogo");
             Obstaculopos = GameObject.Find("Pos-obs-y").transform.position;
+            if(Obstaculopos.x >= posicaoIA.x && posicaoIA.y <= Obstaculopos.y && Impulartime == false)
+            {
+                Debug.Log("pulou");
+                impulsionar();
+                Impulartime = true;
+            }
         }
         else
         {
