@@ -1,37 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BirdBehavior : MonoBehaviour
 {
     Rigidbody2D fisica;
-    [SerializeField]
-    private float impulse = 3.0f;
-    private SpriteRenderer op2;
+    [SerializeField] private float impulse = 3.0f;
+    private SpriteRenderer spriteRenderer;
     public Sprite op2Sprite;
+    private Sprite originalSprite;
 
     private void Awake()
     {
-        this.fisica = GetComponent<Rigidbody2D>();
-        this.op2 = GetComponent<SpriteRenderer>();
+        fisica = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        originalSprite = spriteRenderer.sprite;
     }
 
-    // Start is called before the first frame update
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            this.impulsionar();
-            Debug.Log("clicou");
-            this.op2.sprite = op2Sprite;
+            impulsionar();
+            Debug.Log("Mouse Down");
+            spriteRenderer.sprite = op2Sprite; // Altera o sprite ao pressionar o botão do mouse
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Debug.Log("Mouse Up");
+            spriteRenderer.sprite = originalSprite; // Retorna ao sprite original ao soltar o botão do mouse
         }
     }
 
     void impulsionar()
     {
-        this.fisica.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
+        fisica.AddForce(Vector2.up * impulse, ForceMode2D.Impulse);
     }
 }

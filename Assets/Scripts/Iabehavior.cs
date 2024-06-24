@@ -39,7 +39,7 @@ public class Iabehavior : MonoBehaviour
 
         acharObstaculo();
 
-        if (this.transform.position.y < ChegarY && Impulartime == false && estadoObstaculo == true)
+        if (this.transform.position.y < ChegarY && Impulartime == false && estadoObstaculo == false)
         {
             impulsionar();
             Impulartime = true;
@@ -55,7 +55,7 @@ public class Iabehavior : MonoBehaviour
             estadoObstaculo = true;
             Debug.Log("obstaculo esta no jogo");
             Obstaculopos = GameObject.Find("Pos-obs-y").transform.position;
-            if(Obstaculopos.x >= posicaoIA.x && posicaoIA.y <= Obstaculopos.y && Impulartime == false)
+            if(Obstaculopos.y > posicaoIA.y && Impulartime == false)
             {
                 Debug.Log("pulou");
                 impulsionar();
